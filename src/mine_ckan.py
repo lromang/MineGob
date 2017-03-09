@@ -57,7 +57,7 @@ def checkURL(url):
 # Add Features
 ########################################
 k = 0
-for i in all_datasets['result']:
+for i in range(50):#all_datasets['result']:
     print k
     k = k + 1
     ## Obtain datasets.
@@ -104,7 +104,7 @@ d = {'slug'         :  slug,
      'rec_des'      :  res_desc,
      'rec_url'      :  res_url,
      'rec_id'       :  res_id,
-     'rec_disp'     :  rec_disp}
+     'rec_disp'     :  res_disp}
 
 ## To DataFrame
 mat = pd.DataFrame(data = d)
