@@ -1,15 +1,15 @@
 #!/bin/bash
 
-for i in $(seq `tail -n +2  ../data/MAT.csv | awk -F ',' '{print $13}'`)
+for i in $(tail -n +2  ../data/MAT.csv | awk -F ',' '{print $13}')
 do
     # Time prior URL verification.
-    T="$(date + %s)"
+    T="$(date)"
 
     # URL verification.
     urlstatus=$(timeout $1s curl -k -o /dev/null --silent --head --write-out '%{http_code}' "$i" )
 
     # Verification time.
-    T="$(($(date +%s)-T))"
+    T=$(date-$T)
 
     # Check if timeout.
     if [ $(echo $urlstatus | wc -m) -eq 1 ]
