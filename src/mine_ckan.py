@@ -42,7 +42,6 @@ res_size   = []
 res_desc   = []
 res_id     = []
 res_url    = []
-res_disp   = []
 
 
 def checkURL(url):
@@ -57,7 +56,7 @@ def checkURL(url):
 # Add Features
 ########################################
 k = 0
-for i in range(50):#all_datasets['result']:
+for i in all_datasets['result']:
     print k
     k = k + 1
     ## Obtain datasets.
@@ -87,7 +86,6 @@ for i in range(50):#all_datasets['result']:
         res_size.append(resource['size'])
         res_desc.append(resource['description'])
         res_url.append(resource['url'])
-        res_disp.append(checkURL(resource['url']))
 
 ########################################
 ## Create data table
@@ -103,11 +101,10 @@ d = {'slug'         :  slug,
      'fecha_c'      :  fecha_c,
      'rec_des'      :  res_desc,
      'rec_url'      :  res_url,
-     'rec_id'       :  res_id,
-     'rec_disp'     :  res_disp}
+     'rec_id'       :  res_id}
 
 ## To DataFrame
 mat = pd.DataFrame(data = d)
 
 ## Save results
-mat.to_csv("../data/MAT.csv", encoding = "utf-8")
+mat.to_csv("../data/MAT.csv", encoding = "utf-8", index = False)
