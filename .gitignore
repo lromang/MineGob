@@ -6,6 +6,7 @@ upload_adela/*.xlsx
 upload_adela/*.png
 upload_adela/*.tsv
 upload_adela/.*
+upload_adela/pres_public.py
 upload_adela/data_fusion.R
 upload_adela/del
 upload_adela/mine_all.sh
