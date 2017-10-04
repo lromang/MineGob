@@ -26,7 +26,8 @@ drive = GoogleDrive(gauth)
 ##------------------------------------------------
 ## Read MAT
 ##------------------------------------------------
-mat = codecs.open("/home/luis/Documents/Work/Presidencia/MineGob/upload_adela/MAT.csv")
+path = '...'
+mat = codecs.open(path + "/MineGob/upload_adela/MAT.csv")
 c   = mat.read()
 
 printable = set(string.printable)
@@ -49,7 +50,7 @@ file1.Upload(param = {'convert':True})
 ##------------------------------------------------
 ## Read resumen
 ##------------------------------------------------
-resumen = codecs.open("/home/luis/Documents/Work/Presidencia/MineGob/upload_adela/datosgob_resum.csv")
+resumen = codecs.open(path + "/MineGob/upload_adela/datosgob_resum.csv")
 c       = resumen.read()
 c       = filter(lambda x: x in printable, c)
 
@@ -65,7 +66,7 @@ print("https://drive.google.com/uc?export=download&id=0B5p8KkRjjG4HOHhwTHhwenBIU
 ##------------------------------------------------
 ## Read red
 ##------------------------------------------------
-redmx = codecs.open("/home/luis/Documents/Work/Presidencia/MineGob/upload_adela/redmx.csv")
+redmx = codecs.open(path + "/MineGob/upload_adela/redmx.csv")
 c     = redmx.read()
 
 printable = set(string.printable)

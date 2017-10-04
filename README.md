@@ -30,14 +30,14 @@ the output datset, **MAT.csv**, will be stored at **../data/MAT.csv**.
 
 ### Process metadata and Google Analytics integration
 
-For this step you need to edit and execute **process.R**. Firstly, *AUTH* and *KEY* with your actual values
+For this step you need to edit and execute **process.R**. Firstly, replace *AUTH* and *KEY* with your actual values
 
 ```
 token <- Auth("AUTH.apps.googleusercontent.com",
               "KEY")
 ```
 
-Secondly, after doing this (for the first time) and authorizing the application, the following lines might be commented:
+Secondly, after executing for the first time and authorizing the application, the following lines might be commented:
 
 ```
 token <- Auth("AUTH.apps.googleusercontent.com",
@@ -47,6 +47,33 @@ load("oauth_token")
 ## Validate Token
 ValidateToken(token)
 ```
+
+### Upload datasets into drive repository
+
+Replace **path='....'** with actual path and execute:
+
+```
+./upload.py
+```
+
+### Register transaction in Zendesk
+
+Edit **send_urls.R** replacing the following with actual values
+
+```
+    email   <- "mail@mail"
+    admi    <- "user"
+    idad    <- "123456"
+    subid   <- "123456"
+```
+
+as well as `mail@mail:psswd` in **cl_curl**. Afterwards simply:
+
+```
+./send_urls.R
+```
+
+
 
 
 
