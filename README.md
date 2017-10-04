@@ -1,5 +1,4 @@
-# MINEGOB
------------
+# MINEGOB 
 ![alt text][logo]
 
 [logo]: https://github.com/lromang/MineGob/blob/master/images/miner.png
