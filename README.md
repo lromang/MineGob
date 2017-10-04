@@ -8,20 +8,45 @@
 This repository contains multiple functions that allow any given user to mine, process and publish statistical information regarding the behaviour of the distinct datasets available at www.datos.gob.mx. The general pipeline goes as follows: 
  
 * Extract dataset metadata from ckan
-* Process the metadata and extract statistical information regarding resources, datasets, and institutions.
+* Process metadata and extract statistical information regarding resources, datasets, and institutions.
 * Integrate data with information extracted from google analytics. 
 * Upload the datasets into a drive repository.
 * Register transaction in Zendesk.
 
 ## Usage
 
+In the following, we'll assume the user is located in the **src** directory. An empty **data** should be created at the same level as **src**.
+
 
 ### Extract dataset from CKAN
 
-If you are in the src directory, you must create a **../data** directory. Afterwards, simply execute (dependencies stated at the top of the file): 
+Simply execute (dependencies stated at the top of the file): 
 
 ```
 ./mine_ckan.py
 ```
 
-the output datsets **MAT.csv** will be stored at **../data/MAT.csv**.
+the output datset, **MAT.csv**, will be stored at **../data/MAT.csv**.
+
+### Process metadata and Google Analytics integration
+
+For this step you need to edit and execute **process.R**. Firstly, *AUTH* and *KEY* with your actual values
+
+```
+token <- Auth("AUTH.apps.googleusercontent.com",
+              "KEY")
+```
+
+Secondly, after doing this (for the first time) and authorizing the application, the following lines might be commented:
+
+```
+token <- Auth("AUTH.apps.googleusercontent.com",
+              "KEY")
+save(token, file="oauth_token")
+load("oauth_token")
+## Validate Token
+ValidateToken(token)
+```
+
+
+

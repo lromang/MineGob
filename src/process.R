@@ -138,12 +138,12 @@ write.csv(final_data,
 ## 2 91319629 All Web Site Data DESCARGAS 2014/10/01 - today
 ## 3 91863615 All Web Site Data VISITAS   2014/10/01 - today
 
-## token <- Auth("497323299158-elgh4c5t1o57dd8qfvakr99ge6d2qge3.apps.googleusercontent.com",
-##              "I7wDgHvwULRHkB7bjt_JrrJt")
-## save(token, file="oauth_token")
-## load("oauth_token")
+token <- Auth("AUTH.apps.googleusercontent.com",
+              "KEY")
+save(token, file="oauth_token")
+load("oauth_token")
 ## Validate Token
-## ValidateToken(token)
+ValidateToken(token)
 authorize()
 ## -----------------------------
 ## Queries
