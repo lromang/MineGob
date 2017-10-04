@@ -15,7 +15,7 @@ This repository contains multiple functions that allow any given user to mine, p
  
 ## Usage
  
-In the following, we'll assume the user is located in the **src** directory. An empty **data** should be created at the same level as **src**.
+In the following, we'll assume the user is located in the **upload_adela** directory. An empty **data** should be created at the same level as **src**.
  
  
 ### Extract dataset from CKAN
